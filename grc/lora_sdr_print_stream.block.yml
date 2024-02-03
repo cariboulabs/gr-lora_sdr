@@ -1,0 +1,32 @@
+id: lora_sdr_print_stream
+label: print_stream
+category: '[lora_sdr]'
+flags: [ python, cpp ]
+
+templates:
+  imports: from gnuradio import lora_sdr
+  make: lora_sdr.print_stream(${type.size},${vlen})
+
+cpp_templates:
+    includes: ['#include <gnuradio/lora_sdr/null_sink.h>']
+    declarations: 'lora_sdr::print_stream::sptr ${id};'
+    make: 'this->${id} = lora_sdr::print_stream::make(${type},${vlen});'
+
+parameters:
+- id: type
+  label: Input Type
+  dtype: enum
+  option_attributes:
+      size: [gr.sizeof_gr_complex, gr.sizeof_float, gr.sizeof_int, gr.sizeof_short,
+          gr.sizeof_char]
+  hide: part
+- id: vlen
+  label: Vector Length
+  dtype: int
+  default: '1'
+inputs:
+-   domain: stream
+    dtype: ${ type }
+    vlen: ${ vlen }
+
+file_format: 1
