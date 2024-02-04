@@ -14,14 +14,8 @@
   and will be overwritten during the build process
  */
 
+static const char *__doc_gr_lora_sdr_print_stream = R"doc()doc";
 
+static const char *__doc_gr_lora_sdr_print_stream_print_stream = R"doc()doc";
 
- static const char *__doc_gr_lora_sdr_print_stream = R"doc()doc";
-
-
- static const char *__doc_gr_lora_sdr_print_stream_print_stream = R"doc()doc";
-
-
- static const char *__doc_gr_lora_sdr_print_stream_make = R"doc()doc";
-
-  
+static const char *__doc_gr_lora_sdr_print_stream_make = R"doc()doc";

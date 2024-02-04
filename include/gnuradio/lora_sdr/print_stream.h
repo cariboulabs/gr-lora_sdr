@@ -3,6 +3,7 @@
 
 #include <gnuradio/lora_sdr/api.h>
 #include <gnuradio/sync_block.h>
+#include <string>
 
 namespace gr {
 namespace lora_sdr {
@@ -17,7 +18,7 @@ public:
   typedef std::shared_ptr<print_stream> sptr;
 
 
-  static sptr make(size_t itemsize, int vlen);
+  static sptr make(std::string string_type, int vlen);
 };
 
 } // namespace lora_sdr
