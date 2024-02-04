@@ -8,8 +8,10 @@ namespace lora_sdr {
 
 class print_stream_impl : public print_stream {
 private:
-  std::function<void(const char*, char*)> _cast_function;
+  std::function<void(const uint32_t*, uint32_t*)> _cast_function;
   int _vlen;
+  size_t _element_size;
+  uint32_t* _tmp_buffer_pointer;
 
 public:
   print_stream_impl(std::string string_type, int vlen);
